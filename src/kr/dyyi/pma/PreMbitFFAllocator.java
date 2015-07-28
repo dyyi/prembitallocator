@@ -14,12 +14,13 @@ public class PreMbitFFAllocator {
 		System.out.println("* Traversing logic structures ...");
 		HashMap<HashSet<LogicComponent>, Double> densityHash = LogicAnalyzer.run(verilog, lef);
 		
-		File runScript = new File("./00_RUN/scripts/dc_run.tcl");
+		File orgRunScript = new File("./00_RUN/scripts/dc_run.tcl");
 		boolean timingCheck = true;
 		Integer currentDensity = INITIAL_TARGET_DENSITY;
 		while (timingCheck || currentDensity < 100) {
+			// Create run environment
+			
 			System.out.println("\t> MBITFF Allocating for target density: " + currentDensity);
-			new File(./0)
 			MISSolver.run(densityHash, new File("./02_MBITFF/scripts/create_multibit.tcl"), (currentDensity + 0.0)/1000);
 
 			currentDensity += DENSITY_STEP;
